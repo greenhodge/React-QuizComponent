@@ -11,13 +11,17 @@ class Quiz extends Component {
         };
     }
 
+    showNextQuestion() {
+        this.setState({quiz_position: this.state.quiz_position + 1 });
+    }
+
     render() {
 
-        const isQuizEnd = () => quizData.quiz_questions.length === this.state.quiz_position -1;
+        const isQuizEnd = quizData.quiz_questions.length === this.state.quiz_position - 1;
 
         return (
             <div>
-                { isQuizEnd ? <QuizEnd /> : <QuizQuestion quiz_question={quizData.quiz_questions[this.state.quiz_position - 1]} /> }
+                { isQuizEnd ? <QuizEnd /> : <QuizQuestion quiz_question={quizData.quiz_questions[this.state.quiz_position - 1]} showNextQuestionHandler={this.showNextQuestion.bind(this)} /> }
             </div>
         );
     }
