@@ -1,8 +1,12 @@
+main {
+  width: 400px;
+  border: 1px solid #999;
+  margin: 1em auto;
+  padding: 1em;
+}
 .QuizQuestion {
   display: flex;
-  justify-content: center;
-  font-size: 2em;
-  text-align: center;
+  font-size: 5em;
 }
 .QuizEnd {
   display: flex;
@@ -16,19 +20,28 @@
   display: block;
   padding-top: 20px;
 }
-ul {
+ul, li {
   padding: 0;
   margin: 0;
+  list-style: none;
+  width: 100%;
 }
 .buttons {
   display: flex;
-  justify-content: center;
-  text-align: center;
 }
 button {
-  margin: 0.6em auto;
+  margin: 1em auto;
   font-size: 1.5em;
   display: block;
+  width: 100%;
+  border: 2px solid #000;
+  color: #000;
+  background: #ccc;
+}
+button.clicked {
+  border-color: #ccc;
+  background: #eee;
+  color: #ccc;
 }
 .error {
   color: red;
